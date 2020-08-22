@@ -41,10 +41,11 @@ object Build : BuildType({
     triggers {
         vcs {
         }
+
     }
 })
-1342
-211
-3
-2
 1
+23
+5
+6
+7
