@@ -33,6 +33,10 @@ project {
 object Testbuild : BuildType({
     name = "testbuild"
 
+    params {
+        param("a", "1")
+    }
+
     vcs {
         root(DslContext.settingsRoot)
     }
