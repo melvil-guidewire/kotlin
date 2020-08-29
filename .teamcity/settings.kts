@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.maven
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -34,5 +35,13 @@ object Testbuild : BuildType({
 
     vcs {
         root(DslContext.settingsRoot)
+    }
+
+    steps {
+        maven {
+            goals = "clean test"
+            pomLocation = ".teamcity/pom.xml"
+            runnerArgs = "-Dmaven.test.failure.ignore=true"
+        }
     }
 })
