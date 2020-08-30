@@ -54,6 +54,8 @@ object Testbuild : BuildType({
         vcs {
             triggerRules = "+:**"
             branchFilter = ""
+            perCheckinTriggering = true
+            enableQueueOptimization = false
         }
     }
 })
