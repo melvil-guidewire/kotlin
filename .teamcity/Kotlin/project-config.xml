@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="76bd471a-9e79-4bc0-ba2e-a6a37a761d03" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2020.1/project-config.xsd">
+  <name>kotlin</name>
+  <parameters />
+  <project-extensions>
+    <extension id="PROJECT_EXT_2" type="versionedSettings">
+      <parameters>
+        <param name="buildSettings" value="PREFER_VCS" />
+        <param name="credentialsStorageType" value="credentialsJSON" />
+        <param name="enabled" value="true" />
+        <param name="rootId" value="Kotlin_HttpsGithubComMelvilgitKotlin" />
+        <param name="showChanges" value="false" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_3" type="OAuthProvider">
+      <parameters>
+        <param name="displayName" value="Docker Registry" />
+        <param name="providerType" value="Docker" />
+        <param name="repositoryUrl" value="https://docker.io" />
+        <param name="secure:userPass" value="credentialsJSON:64e59f20-6c9e-4244-84b1-d3a6258adee5" />
+        <param name="userName" value="melvildocker" />
+      </parameters>
+    </extension>
+  </project-extensions>
+  <cleanup />
+</project>
+

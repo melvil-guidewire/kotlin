@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="f0159724-e70d-4a4e-b204-8a7df815b3a9" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2020.1/project-config.xsd">
+  <name>testbuild</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_4" name="list files" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="find ." />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_1" name="test-docker" type="DockerCommand">
+        <parameters>
+          <param name="docker.command.type" value="build" />
+          <param name="docker.image.namesAndTags" value="testtag-1" />
+          <param name="docker.push.remove.image" value="true" />
+          <param name="dockerfile.content"><![CDATA[FROM ubuntu
+MAINTAINER demousr@gmail.com
+
+RUN apt-get update
+CMD [“echo”,”Image created”]]]></param>
+          <param name="dockerfile.source" value="CONTENT" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Kotlin_HttpsGithubComMelvilgitKotlin">
+        <checkout-rule rule="+:test=&gt;test" />
+      </vcs-entry-ref>
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <build-extensions>
+      <extension id="DockerSupport" type="DockerSupport">
+        <parameters>
+          <param name="login2registry" value="PROJECT_EXT_3" />
+          <param name="loginCheckbox" value="on" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <cleanup />
+  </settings>
+</build-type>
+
