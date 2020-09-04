@@ -1,5 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
-import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.maven
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 
 /*
@@ -43,10 +43,9 @@ object Testbuild : BuildType({
     }
 
     steps {
-        maven {
-            goals = "clean test"
-            pomLocation = ".teamcity/pom.xml"
-            runnerArgs = "-Dmaven.test.failure.ignore=true"
+        script {
+            name = "testing"
+            scriptContent = "ls -ltra"
         }
     }
 
@@ -54,7 +53,6 @@ object Testbuild : BuildType({
         vcs {
             triggerRules = "+:**"
             branchFilter = ""
-            perCheckinTriggering = true
             enableQueueOptimization = false
         }
     }
