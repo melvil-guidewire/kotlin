@@ -3,6 +3,9 @@
   <name>testbuild</name>
   <description />
   <settings>
+    <disabled-settings>
+      <setting-ref ref="RUNNER_4" />
+    </disabled-settings>
     <parameters />
     <build-runners>
       <runner id="RUNNER_4" name="list files" type="simpleRunner">
