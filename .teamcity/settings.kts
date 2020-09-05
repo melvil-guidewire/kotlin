@@ -41,7 +41,7 @@ object Build : BuildType({
 
     steps {
         script {
-            name = "li"
+            name = "list files"
             scriptContent = "ls -ltra"
             dockerImagePlatform = ScriptBuildStep.ImagePlatform.Linux
             dockerImage = "python"
