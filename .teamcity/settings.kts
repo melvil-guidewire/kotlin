@@ -45,6 +45,10 @@ object Build : BuildType({
             scriptContent = "ls -ltra"
             dockerImagePlatform = ScriptBuildStep.ImagePlatform.Linux
             dockerImage = "python"
+            dockerRunParameters = """
+                -v /var/run/docker.sock:/var/run/docker.sock
+                -v ${'$'}HOME/.docker:/root/.docker
+            """.trimIndent()
         }
     }
 
