@@ -1,5 +1,4 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
-import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 
 /*
@@ -28,32 +27,18 @@ version = "2020.1"
 
 project {
 
-    buildType(Testbuild)
+    buildType(Build)
 }
 
-object Testbuild : BuildType({
-    name = "testbuild"
-
-    params {
-        param("a", "1")
-    }
+object Build : BuildType({
+    name = "Build"
 
     vcs {
         root(DslContext.settingsRoot)
     }
 
-    steps {
-        script {
-            name = "testing"
-            scriptContent = "ls -ltra"
-        }
-    }
-
     triggers {
         vcs {
-            triggerRules = "+:**"
-            branchFilter = ""
-            enableQueueOptimization = false
         }
     }
 })
