@@ -55,8 +55,6 @@ object Build : BuildType({
 
     triggers {
         vcs {
-            triggerRules = "+:root=${DslContext.settingsRoot.id}:**"
-
             branchFilter = ""
         }
     }
