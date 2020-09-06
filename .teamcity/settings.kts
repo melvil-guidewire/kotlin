@@ -55,10 +55,8 @@ object Build : BuildType({
 
     triggers {
         vcs {
-            triggerRules = """
-                +:**
-                +:*
-            """.trimIndent()
+            triggerRules = "+:root=${DslContext.settingsRoot.id}:**"
+
             branchFilter = ""
         }
     }
