@@ -37,8 +37,6 @@ object Build : BuildType({
 
     vcs {
         root(DslContext.settingsRoot, "+:test1 => test1")
-
-        branchFilter = "+:fifth"
     }
 
     steps {
