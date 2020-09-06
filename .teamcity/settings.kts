@@ -55,7 +55,7 @@ object Build : BuildType({
 
     triggers {
         vcs {
-            triggerRules = "+:user=melvil.mec;root=${DslContext.settingsRoot.id}:**"
+            triggerRules = "+:user=melvilgit;root=${DslContext.settingsRoot.id};comment=*update*:**"
 
             branchFilter = ""
         }
