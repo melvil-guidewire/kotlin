@@ -57,6 +57,7 @@ object Build : BuildType({
 
     triggers {
         vcs {
+            triggerRules = "+:**"
             branchFilter = ""
         }
     }
