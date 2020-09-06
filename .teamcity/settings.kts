@@ -55,7 +55,10 @@ object Build : BuildType({
 
     triggers {
         vcs {
-            triggerRules = "+:**"
+            triggerRules = """
+                +:**
+                +:*
+            """.trimIndent()
             branchFilter = ""
         }
     }
