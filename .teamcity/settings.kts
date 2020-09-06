@@ -38,7 +38,7 @@ object Build : BuildType({
     vcs {
         root(DslContext.settingsRoot)
 
-        branchFilter = "+:branch"
+        branchFilter = "+:test_branch"
     }
 
     steps {
