@@ -44,7 +44,7 @@ object Build : BuildType({
     steps {
         script {
             name = "list files"
-            scriptContent = "find ."
+            scriptContent = "find ./*"
             dockerImagePlatform = ScriptBuildStep.ImagePlatform.Linux
             dockerRunParameters = """
                 -v /var/run/docker.sock:/var/run/docker.sock
